@@ -1,19 +1,18 @@
-%define module  XML-XPathEngine
-%define name    perl-%{module}
-%define version 0.12
-%define release %mkrel 1
+%define upstream_name    XML-XPathEngine
+%define upstream_version 0.12
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
+Name:           perl-%{upstream_name}
+Version:        %perl_convert_version %{upstream_version}
+Release:        %mkrel 1
+
 Summary:        A re-usable XPath engine for DOM-like trees
 License:        Artistic and GPL
 Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{module}/
-Source:         http://www.cpan.org/modules/by-module/XML/%{module}-%{version}.tar.bz2
-BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+Url:            http://search.cpan.org/dist/%{upstream_name}/
+Source0:        http://www.cpan.org/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
 
+BuildArch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module provides an XPath engine, that can be re-used by other
@@ -26,7 +25,7 @@ should be able to use this module very easily (you might need to add the cmp
 method on nodes in order to get ordered result sets).
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -47,5 +46,3 @@ rm -rf %{buildroot}
 %doc README Changes
 %{_mandir}/*/*
 %{perl_vendorlib}/XML
-
-
