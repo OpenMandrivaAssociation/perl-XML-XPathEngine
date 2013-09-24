@@ -1,18 +1,16 @@
-%define upstream_name    XML-XPathEngine
-%define upstream_version 0.12
-
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	6
+%define modname	XML-XPathEngine
+%define modver	0.12
 
 Summary:	A re-usable XPath engine for DOM-like trees
-License:	Artistic and GPL
+Name:		perl-%{modname}
+Version:	%perl_convert_version %{modver}
+Release:	6
+License:	Artistic and GPLv2
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/modules/by-module/XML/%{upstream_name}-%{upstream_version}.tar.bz2
-
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{modname}/
+Source0:	http://www.cpan.org/modules/by-module/XML/%{modname}-%{modver}.tar.bz2
 BuildArch:	noarch
+BuildRequires:	perl-devel
 
 %description
 This module provides an XPath engine, that can be re-used by other
@@ -25,7 +23,7 @@ should be able to use this module very easily (you might need to add the cmp
 method on nodes in order to get ordered result sets).
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -qn %{modname}-%{modver}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -39,64 +37,6 @@ make test
 
 %files
 %doc README Changes
-%{_mandir}/*/*
 %{perl_vendorlib}/XML
-
-
-%changelog
-* Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 0.120.0-4mdv2012.0
-+ Revision: 765859
-- rebuilt for perl-5.14.2
-
-* Sat Jan 21 2012 Oden Eriksson <oeriksson@mandriva.com> 0.120.0-3
-+ Revision: 764394
-- rebuilt for perl-5.14.x
-
-* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 0.120.0-2
-+ Revision: 667463
-- mass rebuild
-
-* Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.120.0-1mdv2011.0
-+ Revision: 401813
-- rebuild using %%perl_convert_version
-- fixed license field
-
-* Fri May 01 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.12-1mdv2010.0
-+ Revision: 370253
-- update to new version 0.12
-
-* Thu Aug 07 2008 Thierry Vignaud <tv@mandriva.org> 0.11-2mdv2009.0
-+ Revision: 265467
-- rebuild early 2009.0 package (before pixel changes)
-
-* Wed Apr 16 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.11-1mdv2009.0
-+ Revision: 194866
-- update to new version 0.11
-- update to new version 0.10
-
-* Thu Mar 06 2008 Oden Eriksson <oeriksson@mandriva.com> 0.08-2mdv2008.1
-+ Revision: 180663
-- rebuild
-
-  + Olivier Blin <blino@mandriva.org>
-    - restore BuildRoot
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - kill re-definition of %%buildroot on Pixel's request
-
-
-* Thu Jan 25 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.08-1mdv2007.0
-+ Revision: 113410
-- new version
-
-* Thu Jan 18 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.07-1mdv2007.1
-+ Revision: 110100
-- new version
-
-* Tue Nov 14 2006 Guillaume Rousse <guillomovitch@mandriva.org> 0.05-1mdv2007.1
-+ Revision: 84006
-- Import perl-XML-XPathEngine
-
-* Tue Nov 14 2006 Guillaume Rousse <guillomovitch@mandriva.org> 0.05-1mdv2007.1
-- first mdv release
+%{_mandir}/man3/*
 
