@@ -1,14 +1,14 @@
 %define modname	XML-XPathEngine
-%define modver	0.12
+%define modver 0.13
 
 Summary:	A re-usable XPath engine for DOM-like trees
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	10
+Release:	1
 License:	Artistic and GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
-Source0:	http://www.cpan.org/modules/by-module/XML/%{modname}-%{modver}.tar.bz2
+Source0:	http://www.cpan.org/modules/by-module/XML/XML-XPathEngine-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl-devel
 
@@ -39,4 +39,5 @@ make test
 %doc README Changes
 %{perl_vendorlib}/XML
 %{_mandir}/man3/*
+
 
