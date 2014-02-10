@@ -1,5 +1,5 @@
 %define modname	XML-XPathEngine
-%define modver 0.13
+%define modver 0.14
 
 Summary:	A re-usable XPath engine for DOM-like trees
 Name:		perl-%{modname}
@@ -39,5 +39,6 @@ make test
 %doc README Changes
 %{perl_vendorlib}/XML
 %{_mandir}/man3/*
+
 
 

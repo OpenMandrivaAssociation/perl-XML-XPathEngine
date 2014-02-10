@@ -1,4 +1,5 @@
 removed_sources:
   XML-XPathEngine-0.12.tar.bz2: 5859cb9a762bb5934778954f49f1a5e51f1af343
-sources:
   XML-XPathEngine-0.13.tar.gz: 6ebb6b87e7a5ee89e8419872ef2888125b5d648c
+sources:
+  XML-XPathEngine-0.14.tar.gz: 165a7cd7f8ee140e32d6ba4ec2077e77d7fd0f68
