@@ -4,7 +4,7 @@
 Summary:	A re-usable XPath engine for DOM-like trees
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	3
+Release:	4
 License:	Artistic and GPLv2
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}/
